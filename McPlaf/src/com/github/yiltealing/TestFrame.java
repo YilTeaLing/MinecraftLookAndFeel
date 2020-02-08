@@ -32,6 +32,7 @@ public class TestFrame {
 		frame.setSize(500, 375);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
+
 	}
 	
 	public static void main(String[] args) {

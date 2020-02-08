@@ -53,6 +53,6 @@ MFrame frame = new MFrame();
 
 ## About
 
-[github@YilTeaLing](https://github.com/YilTeaLing)
+[YilTeaLing@github](https://github.com/YilTeaLing)
 
-[bilibili@茶凌儿](https://space.bilibili.com/251608296)
+[茶凌儿@bilibili](https://space.bilibili.com/251608296)

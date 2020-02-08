@@ -5,6 +5,9 @@ import javax.swing.plaf.basic.BasicLookAndFeel;
 
 import sun.swing.SwingLazyValue;
 
+/**
+ * @author YilTeaLing@github
+ */
 public class MinecraftLookAndFeel extends BasicLookAndFeel {
 	private static final long serialVersionUID = 1L;
 

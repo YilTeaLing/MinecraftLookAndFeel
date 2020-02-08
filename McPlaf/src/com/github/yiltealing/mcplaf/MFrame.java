@@ -44,7 +44,7 @@ public class MFrame extends JFrame {
 	
 	private void initialize() {
 		setUndecorated(true);
-		setBackground(new Color(255, 0, 255, 254));
+		setBackground(new Color(0, 0, 0, 0));
 		addMouseListener(new MouseListener() {
 			@Override
 			public void mouseReleased(MouseEvent e) {
@@ -97,27 +97,50 @@ public class MFrame extends JFrame {
 		g2d.setStroke(new BasicStroke(2));
 		
 		g2d.setColor(WINDOW_FILL);
+		//Background color
 		g2d.fill(new Rectangle(6, 6, getWidth() - 12, getHeight() - 12));
+		//The transition block at top right
 		g2d.drawRect(getWidth() - 5, 5, 0, 0);
 		
 		g2d.setColor(WINDOW_BORDER);
+		//Top
 		g2d.drawLine(7, 1, getWidth() - 7, 1);
+		//Left
 		g2d.drawLine(1, 7, 1, getHeight() - 7);
+		//Bottom
 		g2d.drawLine(7, getHeight() - 1, getWidth() - 7, getHeight() - 1);
+		//Right
 		g2d.drawLine(getWidth() - 1, 7, getWidth() - 1, getHeight() - 7);
 		
+		//Top left
 		g2d.draw(new Rectangle(5, 3, 0, 0));
 		g2d.draw(new Rectangle(3, 5, 0, 0));
+		//Top right
 		g2d.draw(new Rectangle(getWidth() - 5, 3, 0, 0));
 		g2d.draw(new Rectangle(getWidth() - 3, 5, 0, 0));
+		//Bottom left
 		g2d.draw(new Rectangle(3, getHeight() - 5, 0, 0));
 		g2d.draw(new Rectangle(5, getHeight() - 3, 0, 0));
+		//Bottom right
 		g2d.draw(new Rectangle(getWidth() - 5, getHeight() - 3, 0, 0));
 		g2d.draw(new Rectangle(getWidth() - 3, getHeight() - 5, 0, 0));
 		
 		g2d.setColor(WINDOW_HIGHLIGHT);
+		//Top
 		g2d.fill(new Rectangle(6, 2, getWidth() - 12, 4));
+		//Left
 		g2d.fill(new Rectangle(2, 6, 4, getHeight() - 12));
+		//The transition block at top left
 		g2d.fill(new Rectangle(4, 4, 4, 4));
+		
+		g2d.setColor(WINDOW_SHADOW);
+		//Bottom
+		g2d.fill(new Rectangle(6, getHeight() - 6, getWidth() - 12, 4));
+		//Right
+		g2d.fill(new Rectangle(getWidth() - 6, 6, 4, getHeight() - 12));
+		//The transition block at bottom left
+		g2d.drawRect(5, getHeight() - 5, 0, 0);
+		//The shadow block at bottom right
+		g2d.fill(new Rectangle(getWidth() - 8, getHeight() - 8, 4, 4));
 	}
 }

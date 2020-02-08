@@ -21,13 +21,13 @@ import com.github.yiltealing.mcplaf.MinecraftLookAndFeel;
 try {
 	UIManager.setLookAndFeel(new MinecraftLookAndFeel());
 }
-	catch (Exception e) {}
+catch (Exception e) {}
 ```
 Tips: This code should be add before create JFrame or MFrame. 
 
 提示：此代码应在创建JFrame或MFrame之前添加。
 
-
+  
 
 If you want your forms also use this LookandFeel, you just need to change the class of Frame from "JFrame" to "MFrame". 
 

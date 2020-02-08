@@ -27,6 +27,8 @@ Tips: This code should be add before create JFrame or MFrame.
 
 提示：此代码应在创建JFrame或MFrame之前添加。
 
+
+
 If you want your forms also use this LookandFeel, you just need to change the class of Frame from "JFrame" to "MFrame". 
 
 如果您希望窗体也使用这种LookandFeel，只需将Frame的类从"JFrame"更改为"MFrame"。
@@ -50,10 +52,6 @@ MFrame frame = new MFrame();
 + 开源且免费，仅需添加少量代码
 
 ## About
-
-Contact author: 
-
-联系作者：
 
 [github@YilTeaLing](https://github.com/YilTeaLing)
 

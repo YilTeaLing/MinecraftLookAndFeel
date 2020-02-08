@@ -2,6 +2,7 @@ package com.github.yiltealing;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JRootPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
@@ -20,7 +21,6 @@ public class TestFrame {
 			System.out.println("Error!");
 		}
 		frame = new MFrame();
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//TODO Layout
 		frame.getContentPane().setLayout(null);
 		

@@ -16,14 +16,14 @@ import sun.awt.AppContext;
 public class MinecraftButtonUI extends BasicButtonUI {
 	private static final Object MINECRAFT_BUTTON_UI_KEY = new Object();
 	
-	private static final Color BUTTON_PLAIN = MinecraftStyle.getColor("plain");
-	private static final Color BUTTON_HIGHLIGHT = MinecraftStyle.getColor("highlight");
-	private static final Color BUTTON_SHADOW = MinecraftStyle.getColor("shadow");
-	private static final Color ACTIVE_BUTTON_BORDER = MinecraftStyle.getColor("activeBorder");
-	private static final Color INACTIVE_BUTTON_BORDER = MinecraftStyle.getColor("inactiveBorder");
-	private static final Color TRANSITION_HIGH = MinecraftStyle.getColor("transitionHigh");
-	private static final Color TRANSITION_MIDDLE = MinecraftStyle.getColor("transitionMiddle");
-	private static final Color TRANSITION_LOW = MinecraftStyle.getColor("transitionLow");
+	private static final Color BUTTON_FILL = MinecraftStyle.getColor("buttonFill");
+	private static final Color BUTTON_HIGHLIGHT = MinecraftStyle.getColor("buttonHighlight");
+	private static final Color BUTTON_SHADOW = MinecraftStyle.getColor("buttonShadow");
+	private static final Color BUTTON_ACTIVE_BORDER = MinecraftStyle.getColor("buttonActiveBorder");
+	private static final Color BUTTON_INACTIVE_BORDER = MinecraftStyle.getColor("buttonInactiveBorder");
+	private static final Color TRANSITION_HIGH = MinecraftStyle.getColor("buttonTransitionHigh");
+	private static final Color TRANSITION_MIDDLE = MinecraftStyle.getColor("buttonTransitionMiddle");
+	private static final Color TRANSITION_LOW = MinecraftStyle.getColor("buttonTransitionLow");
 	
 	public static ComponentUI createUI(JComponent c) {
 		AppContext appContext = AppContext.getAppContext();
@@ -44,7 +44,7 @@ public class MinecraftButtonUI extends BasicButtonUI {
 	protected void paintFocus(Graphics g, AbstractButton b, Rectangle viewRect, Rectangle textRect, Rectangle iconRect) {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setStroke(new BasicStroke(2));
-		g2d.setColor(ACTIVE_BUTTON_BORDER);
+		g2d.setColor(BUTTON_ACTIVE_BORDER);
 		//g2d.drawRect(1, 1, b.getWidth() - 2, b.getHeight() - 2);
 	}
 	
@@ -57,11 +57,16 @@ public class MinecraftButtonUI extends BasicButtonUI {
 	}
 	
 	public void paint(Graphics g, JComponent c) {
+		paint2x(g, c);
+		super.paint(g, c);
+	}
+	
+	public void paint2x(Graphics g, JComponent c) {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setStroke(new BasicStroke(2));
-		g2d.setColor(BUTTON_PLAIN);
+		g2d.setColor(BUTTON_FILL);
 		g2d.fill(new Rectangle(0, 0, c.getWidth(), c.getHeight()));
-		g2d.setColor(INACTIVE_BUTTON_BORDER);
+		g2d.setColor(BUTTON_INACTIVE_BORDER);
 		g2d.drawRect(1, 1, c.getWidth() - 2, c.getHeight() - 2);
 		g2d.setColor(BUTTON_HIGHLIGHT);
 		g2d.drawLine(3, 3, c.getWidth() - 3, 3);
@@ -76,6 +81,9 @@ public class MinecraftButtonUI extends BasicButtonUI {
 		g2d.drawRect(3, c.getHeight() - 3, 0, 0);
 		g2d.setColor(TRANSITION_LOW);
 		g2d.drawRect(c.getWidth() - 3, c.getHeight() - 3, 0, 0);
-		super.paint(g, c);
+	}
+	
+	public void paint4x(Graphics g, JComponent c) {
+		
 	}
 }

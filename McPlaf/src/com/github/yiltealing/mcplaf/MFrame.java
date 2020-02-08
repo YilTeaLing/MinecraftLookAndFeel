@@ -11,11 +11,15 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JToolBar;
+
+import javafx.scene.control.ToolBar;
 
 public class MFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
-	private static boolean k = false;
-	private static int srcX, srcY;
+	private ControlBar control;
+	private boolean k = false;
+	private int srcX, srcY;
 	
 	private static final Color WINDOW_FILL = MinecraftStyle.getColor("windowFill");
 	private static final Color WINDOW_BORDER = MinecraftStyle.getColor("windowBorder");
@@ -45,6 +49,8 @@ public class MFrame extends JFrame {
 	private void initialize() {
 		setUndecorated(true);
 		setBackground(new Color(0, 0, 0, 0));
+		control = new ControlBar();
+		control.setSize(50, 50);
 		addMouseListener(new MouseListener() {
 			@Override
 			public void mouseReleased(MouseEvent e) {
@@ -91,8 +97,15 @@ public class MFrame extends JFrame {
 		});
 	}
 	
+
+	
 	public void paint(Graphics g) {
 		super.paint(g);
+		paint2x(g);
+		control.paint(g, getWidth(), getHeight());
+	}
+	
+	public void paint2x(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setStroke(new BasicStroke(2));
 		
@@ -108,7 +121,7 @@ public class MFrame extends JFrame {
 		//Left
 		g2d.drawLine(1, 7, 1, getHeight() - 7);
 		//Bottom
-		g2d.drawLine(7, getHeight() - 1, getWidth() - 7, getHeight() - 1);
+		g2d.drawLine(7, getHeight() - 1, getWidth() - 7, getHeight() - 1); 
 		//Right
 		g2d.drawLine(getWidth() - 1, 7, getWidth() - 1, getHeight() - 7);
 		
@@ -142,5 +155,93 @@ public class MFrame extends JFrame {
 		g2d.drawRect(5, getHeight() - 5, 0, 0);
 		//The shadow block at bottom right
 		g2d.fill(new Rectangle(getWidth() - 8, getHeight() - 8, 4, 4));
+	}
+	
+	public void paint4x(Graphics g) {
+		
+	}
+}
+
+class ControlBar {
+	public static final int NONE = 0x0;
+	public static final int CLOSE = 0x1;
+	public static final int MIN = 0x2;
+	public static final int MAX = 0x4;
+	public static final int HELP = 0x8;
+	
+	private static final Color CONTROL_FILL = MinecraftStyle.getColor("controlFill");
+	private static final Color CONTROL_BORDER = MinecraftStyle.getColor("controlBorder");
+	private static final Color CONTROL_HIGHLIGHT = MinecraftStyle.getColor("controlHighlight");
+	private static final Color CONTROL_SHADOW = MinecraftStyle.getColor("controlShadow");
+	
+	private int windowWidth, windowHeight;
+	private int width, height;
+	private int operation;
+	
+	public ControlBar() {
+		
+	}
+	
+	public ControlBar(int defaultOperation) {
+		operation = defaultOperation;
+	}
+	
+	public int getWidth() {
+		return width;
+	}
+	
+	public int getHeight() {
+		return height;
+	}
+	
+	protected void setSize(int width, int height) {
+		this.width = width;
+		this.height = height;
+	}
+	
+	public void paint(Graphics g, int windowWidth, int windowHeight) {
+		paint2x(g);
+	}
+	
+	public void paint2x(Graphics g) {
+		Graphics2D g2d = (Graphics2D) g;
+		g2d.setStroke(new BasicStroke(2));
+		g2d.setClip(0, 0, getWidth(), getHeight());
+		g2d.setColor(CONTROL_FILL);
+		//Background color
+		g2d.fill(new Rectangle(6, 6, getWidth() - 12, getHeight() - 6));
+		//The transition block at top right
+		g2d.drawRect(getWidth() - 5, 5, 0, 0);
+		
+		g2d.setColor(CONTROL_BORDER);
+		//Top
+		g2d.drawLine(7, 1, getWidth() - 7, 1);
+		//Left
+		g2d.drawLine(1, 7, 1, getHeight() - 1);
+		//Right
+		g2d.drawLine(getWidth() - 1, 7, getWidth() - 1, getHeight() - 1);
+		
+		//Top left
+		g2d.draw(new Rectangle(5, 3, 0, 0));
+		g2d.draw(new Rectangle(3, 5, 0, 0));
+		//Top right
+		g2d.draw(new Rectangle(getWidth() - 5, 3, 0, 0));
+		g2d.draw(new Rectangle(getWidth() - 3, 5, 0, 0));
+		
+		g2d.setColor(CONTROL_HIGHLIGHT);
+		//Top
+		g2d.fill(new Rectangle(6, 2, getWidth() - 12, 4));
+		//Left
+		g2d.fill(new Rectangle(2, 6, 4, getHeight() - 6));
+		//The transition block at top left
+		g2d.fill(new Rectangle(4, 4, 4, 4));
+		
+		g2d.setColor(CONTROL_SHADOW);
+		//Right
+		g2d.fill(new Rectangle(getWidth() - 6, 6, 4, getHeight() - 6));
+	}
+	
+	public void paint4x(Graphics g) {
+		
 	}
 }

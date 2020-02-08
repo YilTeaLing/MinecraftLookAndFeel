@@ -25,21 +25,23 @@ public class MinecraftStyle {
 		bedrockColorMap.put("windowHighlight", new Color(255, 255, 255));
 		bedrockColorMap.put("windowShadow", new Color(85, 85, 85));
 		
+		//ControlBar
+		bedrockColorMap.put("controlFill", new Color(72, 72, 72));
+		bedrockColorMap.put("controlBorder", new Color(0, 0, 0));
+		bedrockColorMap.put("controlHighlight", new Color(115, 115, 115));
+		bedrockColorMap.put("controlShadow", new Color(46, 45, 48));
+		
 		//Button
-		bedrockColorMap.put("plain", new Color(198, 198, 198));
-		bedrockColorMap.put("activeBorder", new Color(255, 255, 255));
-		bedrockColorMap.put("activeText", new Color(255, 255, 255));
-		
-		//Text
-		bedrockColorMap.put("inactiveBorder", new Color(19, 19, 19));
-		bedrockColorMap.put("inactiveText", new Color(76, 76, 76));
-		
-
-		bedrockColorMap.put("highlight", new Color(247, 247, 247));
-		bedrockColorMap.put("shadow", new Color(101, 100, 101));
-		bedrockColorMap.put("transitionHigh", new Color(254, 254, 254));
-		bedrockColorMap.put("transitionMiddle", new Color(192, 191, 192));
-		bedrockColorMap.put("transitionLow", new Color(89, 87, 89));
+		bedrockColorMap.put("buttonFill", new Color(198, 198, 198));
+		bedrockColorMap.put("buttonActiveBorder", new Color(255, 255, 255));
+		bedrockColorMap.put("buttonInactiveBorder", new Color(19, 19, 19));
+		bedrockColorMap.put("buttonHighlight", new Color(247, 247, 247));
+		bedrockColorMap.put("buttonShadow", new Color(101, 100, 101));
+		bedrockColorMap.put("buttonActiveText", new Color(255, 255, 255));
+		bedrockColorMap.put("buttonInactiveText", new Color(76, 76, 76));
+		bedrockColorMap.put("buttonTransitionHigh", new Color(254, 254, 254));
+		bedrockColorMap.put("buttonTransitionMiddle", new Color(192, 191, 192));
+		bedrockColorMap.put("buttonTransitionLow", new Color(89, 87, 89));
 		
 		colorMap = bedrockColorMap;
 		resolution = Resolution.AUTO;

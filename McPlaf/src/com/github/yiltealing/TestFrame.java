@@ -8,6 +8,7 @@ import javax.swing.UIManager;
 
 import com.github.yiltealing.mcplaf.MFrame;
 import com.github.yiltealing.mcplaf.MinecraftLookAndFeel;
+import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 
 public class TestFrame {
 	private static MFrame frame;
@@ -24,10 +25,18 @@ public class TestFrame {
 		//TODO Layout
 		frame.getContentPane().setLayout(null);
 		
-		JButton b = new JButton("Test 测试");
-		b.setBounds(50, 50, 100, 230);
+		JButton b1 = new JButton("Test 测试1");
+		JButton b2 = new JButton("Test 测试2");
+		JButton b3 = new JButton("Test 测试3");
+		b1.setBounds(50, 50, 100, 50);
+		b2.setBounds(150, 50, 100, 50);
+		b3.setBounds(50, 100, 100, 50);
+		frame.getContentPane().add(b1);
+		frame.getContentPane().add(b2);
+		frame.getContentPane().add(b3);
 		
-		frame.getContentPane().add(b);
+
+
 		
 		frame.setSize(500, 375);
 		frame.setLocationRelativeTo(null);

@@ -103,6 +103,7 @@ public class MFrame extends JFrame {
 		super.paint(g);
 		paint2x(g);
 		control.paint(g, getWidth(), getHeight());
+
 	}
 	
 	public void paint2x(Graphics g) {
@@ -206,7 +207,6 @@ class ControlBar {
 	public void paint2x(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setStroke(new BasicStroke(2));
-		g2d.setClip(0, 0, getWidth(), getHeight());
 		g2d.setColor(CONTROL_FILL);
 		//Background color
 		g2d.fill(new Rectangle(6, 6, getWidth() - 12, getHeight() - 6));

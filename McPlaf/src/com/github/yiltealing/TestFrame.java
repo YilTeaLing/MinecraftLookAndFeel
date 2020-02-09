@@ -36,9 +36,6 @@ public class TestFrame {
 		frame.getContentPane().add(b2);
 		frame.getContentPane().add(b3);
 		
-
-
-		
 		frame.setSize(500, 375);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);

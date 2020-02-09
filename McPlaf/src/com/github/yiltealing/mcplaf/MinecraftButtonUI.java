@@ -75,7 +75,6 @@ public class MinecraftButtonUI extends BasicButtonUI {
 	}
 	
 	public void paint(Graphics g, JComponent c) {
-		System.out.println("Button(" + c.getName() + "): " + TestFrame.i++);
 		paint2x(g, c);
 		super.paint(g, c);
 	}

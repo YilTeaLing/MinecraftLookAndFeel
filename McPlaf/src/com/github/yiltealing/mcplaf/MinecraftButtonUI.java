@@ -51,9 +51,43 @@ public class MinecraftButtonUI extends BasicButtonUI {
 	@Override
 	protected void paintButtonPressed(Graphics g, AbstractButton b) {
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.setStroke(new BasicStroke(5));
+		g2d.setStroke(new BasicStroke(2));
+		
+		/*
 		g2d.setColor(Color.RED);
 		g2d.drawLine(0, 0, 20, 0);
+		*/
+		
+		
+		g2d.setColor(new Color(139, 139, 139));
+		g2d.fill(new Rectangle(0, 0, b.getWidth(), b.getHeight()));
+		g2d.setColor(new Color(0,0,0));
+		g2d.drawRect(1, 1, b.getWidth() - 2, b.getHeight() - 2);
+		g2d.setColor(new Color(91, 90, 91));
+		g2d.drawLine(3, 3, b.getWidth() - 3, 3);
+		g2d.drawLine(3, 3, 3, b.getHeight() - 3);
+		g2d.setColor(new Color(223, 223, 223));
+		g2d.drawLine(b.getWidth() - 3, 3, b.getWidth() - 3, b.getHeight() - 3);
+		g2d.drawLine(3, b.getHeight() - 3, b.getWidth() - 3, b.getHeight() - 3);
+		g2d.setColor(new Color(80, 78, 80));
+		g2d.drawRect(3, 3, 0, 0);
+		g2d.setColor(new Color(173, 173, 173));
+		g2d.drawRect(b.getWidth() - 3, 3, 0, 0);
+		g2d.drawRect(3, b.getHeight() - 3, 0, 0);
+		g2d.setColor(new Color(229, 229, 229));
+		g2d.drawRect(b.getWidth() - 3, b.getHeight() - 3, 0, 0);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 	public void paint(Graphics g, JComponent c) {

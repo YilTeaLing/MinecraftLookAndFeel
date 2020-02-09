@@ -1,6 +1,6 @@
 # MinecraftLookAndFeel
 
-![](https://img.shields.io/badge/version-0.0.1-red.svg)
+![](https://img.shields.io/badge/version-0.0.2-red.svg)
 ![](https://img.shields.io/github/license/YilTeaLing/MinecraftLookAndFeel.svg)
 
 This is a LookandFeel park on Swing. You can decorate your Swing project by using this LookandFeel park. It support the styles of Java and Bedrock Edition Minecraft now, and we will add more styles about Minecraft in the future. 

@@ -13,6 +13,8 @@ import java.awt.event.MouseMotionListener;
 import javax.swing.JFrame;
 import javax.swing.JToolBar;
 
+import com.github.yiltealing.TestFrame;
+
 import javafx.scene.control.ToolBar;
 
 public class MFrame extends JFrame {
@@ -100,18 +102,20 @@ public class MFrame extends JFrame {
 
 	
 	public void paint(Graphics g) {
-		super.paint(g);
 		paint2x(g);
+		super.paint(g);
 		control.paint(g, getWidth(), getHeight());
 
 	}
 	
 	public void paint2x(Graphics g) {
+		System.out.println("Frame: " + TestFrame.i++);
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setStroke(new BasicStroke(2));
 		
 		g2d.setColor(WINDOW_FILL);
 		//Background color
+		//TODO Culling
 		g2d.fill(new Rectangle(6, 6, getWidth() - 12, getHeight() - 12));
 		//The transition block at top right
 		g2d.drawRect(getWidth() - 5, 5, 0, 0);
@@ -156,6 +160,7 @@ public class MFrame extends JFrame {
 		g2d.drawRect(5, getHeight() - 5, 0, 0);
 		//The shadow block at bottom right
 		g2d.fill(new Rectangle(getWidth() - 8, getHeight() - 8, 4, 4));
+		
 	}
 	
 	public void paint4x(Graphics g) {

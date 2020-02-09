@@ -12,6 +12,7 @@ import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 
 public class TestFrame {
 	private static MFrame frame;
+	public static int i = 0;
 	
 	private static void createWindow() {
 		try {

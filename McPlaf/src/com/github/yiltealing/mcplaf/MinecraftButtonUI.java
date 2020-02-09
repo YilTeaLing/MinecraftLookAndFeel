@@ -11,6 +11,8 @@ import javax.swing.JComponent;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicButtonUI;
 
+import com.github.yiltealing.TestFrame;
+
 import sun.awt.AppContext;
 
 public class MinecraftButtonUI extends BasicButtonUI {
@@ -36,11 +38,6 @@ public class MinecraftButtonUI extends BasicButtonUI {
 	}
 	
 	@Override
-	protected void installDefaults(AbstractButton b) {
-		super.installDefaults(b);
-	}
-	
-	@Override
 	protected void paintFocus(Graphics g, AbstractButton b, Rectangle viewRect, Rectangle textRect, Rectangle iconRect) {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setStroke(new BasicStroke(2));
@@ -57,6 +54,7 @@ public class MinecraftButtonUI extends BasicButtonUI {
 	}
 	
 	public void paint(Graphics g, JComponent c) {
+		System.out.println("Button(" + c.getName() + "): " + TestFrame.i++);
 		paint2x(g, c);
 		super.paint(g, c);
 	}

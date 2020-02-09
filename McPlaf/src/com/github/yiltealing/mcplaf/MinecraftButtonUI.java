@@ -59,6 +59,7 @@ public class MinecraftButtonUI extends BasicButtonUI {
 		
 		
 		
+		
 		g2d.setColor(new Color(139, 139, 139));
 		g2d.fill(new Rectangle(0, 0, b.getWidth(), b.getHeight()));
 		g2d.setColor(new Color(0,0,0));

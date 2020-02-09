@@ -50,14 +50,13 @@ public class MinecraftButtonUI extends BasicButtonUI {
 	
 	@Override
 	protected void paintButtonPressed(Graphics g, AbstractButton b) {
+		
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setStroke(new BasicStroke(2));
 		/*
 		g2d.setColor(Color.RED);
 		g2d.drawLine(0, 0, 20, 0);
 		*/
-
-
 		g2d.setColor(new Color(139, 139, 139));
 		g2d.fill(new Rectangle(0, 0, b.getWidth(), b.getHeight()));
 		g2d.setColor(new Color(0,0,0));

@@ -4,11 +4,7 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.Rectangle;
-import java.awt.image.ImageObserver;
-import java.awt.image.ImageProducer;
-import java.util.Observer;
 
 import javax.swing.AbstractButton;
 import javax.swing.JComponent;
@@ -46,14 +42,20 @@ public class MinecraftButtonUI extends BasicButtonUI {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setStroke(new BasicStroke(2));
 		g2d.setColor(BUTTON_ACTIVE_BORDER);
-		g2d.drawRect(1, 1, b.getWidth() - 2, b.getHeight() - 2);
+		//g2d.drawRect(1, 1, b.getWidth() - 2, b.getHeight() - 2);
 	}
 	
 	@Override
 	protected void paintButtonPressed(Graphics g, AbstractButton b) {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setStroke(new BasicStroke(2));
-		g2d.setColor(new Color(255,0,0));
+		/*
+		g2d.setColor(Color.RED);
+		g2d.drawLine(0, 0, 20, 0);
+		*/
+		
+		
+		g2d.setColor(new Color(139, 139, 139));
 		g2d.fill(new Rectangle(0, 0, b.getWidth(), b.getHeight()));
 		g2d.setColor(new Color(0,0,0));
 		g2d.drawRect(1, 1, b.getWidth() - 2, b.getHeight() - 2);
@@ -73,6 +75,12 @@ public class MinecraftButtonUI extends BasicButtonUI {
 	}
 	
 	public void paint(Graphics g, JComponent c) {
+		System.out.println("Button(" + c.getName() + "): " + TestFrame.i++);
+		paint2x(g, c);
+		super.paint(g, c);
+	}
+	
+	public void paint2x(Graphics g, JComponent c) {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setStroke(new BasicStroke(2));
 		g2d.setColor(BUTTON_FILL);
@@ -92,6 +100,9 @@ public class MinecraftButtonUI extends BasicButtonUI {
 		g2d.drawRect(3, c.getHeight() - 3, 0, 0);
 		g2d.setColor(TRANSITION_LOW);
 		g2d.drawRect(c.getWidth() - 3, c.getHeight() - 3, 0, 0);
-		super.paint(g, c);
+	}
+	
+	public void paint4x(Graphics g, JComponent c) {
+		
 	}
 }

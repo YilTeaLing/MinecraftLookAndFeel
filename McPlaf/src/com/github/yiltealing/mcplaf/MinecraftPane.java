@@ -7,8 +7,6 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
-import com.github.yiltealing.TestFrame;
-
 public class MinecraftPane extends Container {
 	private static final long serialVersionUID = 1L;
 	

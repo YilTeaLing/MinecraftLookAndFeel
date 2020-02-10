@@ -44,19 +44,29 @@ public class MinecraftLookAndFeel extends BasicLookAndFeel {
 		
 	}
 	
-    protected void initClassDefaults(UIDefaults table) {
+    @Override
+	protected void initClassDefaults(UIDefaults table) {
     	super.initClassDefaults(table);
     	
     	final String minecraftPackageName = "tea.swing.plaf.minecraft.";
     	
     	Object[] uiDefaults = {
-    			"ButtonUI", "com.github.yiltealing.mcplaf.MinecraftButtonUI"
+    			"ButtonUI", "com.github.yiltealing.mcplaf.MinecraftButtonUI",
+    			
+    			"BasicTextFieldUI", "com.github.yiltealing.mcplaf.MinecraftTextFieldUI"
+    			
+    			
+    			//"TextUI", "com.github.yiltealing.mcplaf.MinecraftTextFieldUI"
+    			
+    			
+    		
     	};
     	
     	table.putDefaults(uiDefaults);
     }
     
-    protected void initSystemColorDefaults(UIDefaults table) {
+    @Override
+	protected void initSystemColorDefaults(UIDefaults table) {
     	String[] defaultSystemColors = {
                 "desktop", "#005C5C", /* Color of the desktop background */
           "activeCaption", "#000080", /* Color for captions (title bars) when they are active. */
@@ -100,9 +110,11 @@ public class MinecraftLookAndFeel extends BasicLookAndFeel {
     	super.initComponentDefaults(table);
     	
     	Object buttonBorder = new SwingLazyValue("com.github.yiltealing.mcplaf.MinecraftBorders", "getButtonBorder");
-    	
+
+
     	Object[] defaults = {
-    			"Button.border", buttonBorder
+    			"Button.border", buttonBorder,
+    			"TextField.border", buttonBorder
     	};
     	
     	table.putDefaults(defaults);

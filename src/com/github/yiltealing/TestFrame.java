@@ -6,8 +6,8 @@ import javax.swing.JRootPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-import com.github.yiltealing.mcplaf.MFrame;
 import com.github.yiltealing.mcplaf.MinecraftLookAndFeel;
+import com.github.yiltealing.mcplaf.window.MFrame;
 import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 
 public class TestFrame {
@@ -23,8 +23,6 @@ public class TestFrame {
 			System.out.println("Error!");
 		}
 		frame = new MFrame();
-		//TODO Layout
-		frame.getContentPane().setLayout(null);
 		
 		JButton b1 = new JButton("Test 测试1");
 		JButton b2 = new JButton("Test 测试2");
@@ -37,12 +35,9 @@ public class TestFrame {
 		frame.getContentPane().add(b3);
 		
 		frame.setSize(500, 375);
-		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
-
 	}
 	
 	public static void main(String[] args) {

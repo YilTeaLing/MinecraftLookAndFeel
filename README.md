@@ -3,11 +3,13 @@
 ![](https://img.shields.io/badge/version-0.0.2-red.svg)
 ![](https://img.shields.io/github/license/YilTeaLing/MinecraftLookAndFeel.svg)
 
-This is a LookandFeel park on Swing. You can decorate your Swing project by using this LookandFeel park. It support the styles of Java and Bedrock Edition Minecraft now, and we will add more styles about Minecraft in the future. 
+This is a LookandFeel park on Swing. We will add more styles about Minecraft in the future. 
 
-这是一个Swing的LookAndFeel包。您可以通过使用本包来装饰您的Swing项目。它目前支持Minecraft Java版和基岩版，并且我们将在未来添加更多有关Minecraft的样式。
+这是一个Swing的LookAndFeel包。您可以通过使用本包来装饰您的Swing项目。我们将在未来添加更多有关Minecraft的样式。
 
-Display video 展示视频
+Display video
+
+展示视频
 
 ## How to use it? 
 
@@ -26,8 +28,6 @@ catch (Exception e) {}
 Tips: This code should be add before create JFrame or MFrame. 
 
 提示：此代码应在创建JFrame或MFrame之前添加。
-
-  
 
 If you want your forms also use this LookandFeel, you just need to change the class of Frame from "JFrame" to "MFrame". 
 

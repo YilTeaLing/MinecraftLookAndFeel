@@ -6,7 +6,7 @@ import javax.swing.plaf.basic.BasicLookAndFeel;
 import sun.swing.SwingLazyValue;
 
 /**
- * @author YilTeaLing@github
+ * @author YilTeaLing(GITHUB)
  */
 public class MinecraftLookAndFeel extends BasicLookAndFeel {
 	private static final long serialVersionUID = 1L;
@@ -47,10 +47,10 @@ public class MinecraftLookAndFeel extends BasicLookAndFeel {
     protected void initClassDefaults(UIDefaults table) {
     	super.initClassDefaults(table);
     	
-    	final String minecraftPackageName = "tea.swing.plaf.minecraft.";
+    	final String minecraftPackageName = "com.github.yiltealing.mcplaf.";
     	
     	Object[] uiDefaults = {
-    			"ButtonUI", "com.github.yiltealing.mcplaf.MinecraftButtonUI"
+    			"ButtonUI", minecraftPackageName + "MinecraftButtonUI"
     	};
     	
     	table.putDefaults(uiDefaults);

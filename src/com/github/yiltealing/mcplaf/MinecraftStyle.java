@@ -42,7 +42,7 @@ public class MinecraftStyle {
 		
 	}
 	
-	protected static Color getColor(String key) {
+	public static Color getColor(String key) {
 		return colorMap.get(key) != null ? colorMap.get(key) : UNKNOWN_COLOR;
 	}
 }

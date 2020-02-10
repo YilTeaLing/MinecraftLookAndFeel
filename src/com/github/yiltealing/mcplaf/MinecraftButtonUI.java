@@ -80,6 +80,7 @@ public class MinecraftButtonUI extends BasicButtonUI {
 	public void paint(Graphics g, JComponent c) {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setStroke(new BasicStroke(2));
+		
 		g2d.setColor(BUTTON_FILL);
 		g2d.fill(new Rectangle(0, 0, c.getWidth(), c.getHeight()));
 		g2d.setColor(BUTTON_INACTIVE_BORDER);

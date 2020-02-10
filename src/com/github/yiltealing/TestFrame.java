@@ -38,7 +38,7 @@ public class TestFrame {
 		
 		frame.setSize(500, 375);
 		
-		frame.setDefaultCloseOperation(3);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);

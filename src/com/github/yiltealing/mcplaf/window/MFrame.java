@@ -1,17 +1,16 @@
 package com.github.yiltealing.mcplaf.window;
 
 import java.awt.Color;
-import java.awt.Container;
 import java.awt.GraphicsConfiguration;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 import javax.swing.JFrame;
-import javax.swing.JRootPane;
 
 public class MFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
+	private MRootPane rootPane = new MRootPane();
 	private boolean k = false;
 	private int srcX, srcY;
 	
@@ -35,20 +34,14 @@ public class MFrame extends JFrame {
 		initialize();
 	}
 	
-	@Override
-	public void setContentPane(Container contentPane) {
-		
-	}
-	
-	@Override
-	public void pack() {
-		System.out.println("[MinecraftLookAndFeel] Method pack is not supported at this time.");
+	public void setOperation(int o) {
+		rootPane.setOperation(o);
 	}
 	
 	private void initialize() {
 		setUndecorated(true);
 		setBackground(new Color(0, 0, 0, 0));
-		setRootPane(new MinecraftRootPane());
+		setRootPane(rootPane);
 		
 		addMouseListener(new MouseListener() {
 			@Override

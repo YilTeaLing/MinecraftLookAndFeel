@@ -1,14 +1,14 @@
 package com.github.yiltealing;
 
+import java.awt.FlowLayout;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JRootPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 import com.github.yiltealing.mcplaf.MinecraftLookAndFeel;
 import com.github.yiltealing.mcplaf.window.MFrame;
-import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 
 public class TestFrame {
 	private static MFrame frame;
@@ -23,17 +23,14 @@ public class TestFrame {
 			System.out.println("Error!");
 		}
 		frame = new MFrame();
-		
+		frame.setLayout(new FlowLayout());
 		JButton b1 = new JButton("Test 测试1");
 		JButton b2 = new JButton("Test 测试2");
 		JButton b3 = new JButton("Test 测试3");
-		b1.setBounds(50, 50, 100, 50);
-		b2.setBounds(150, 50, 100, 50);
-		b3.setBounds(50, 100, 100, 50);
 		frame.getContentPane().add(b1);
 		frame.getContentPane().add(b2);
 		frame.getContentPane().add(b3);
-		
+		frame.pack();
 		frame.setSize(500, 375);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
